@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@color/clinic_rose_accent"
+        android:pathData="M23.64,7c-0.45,-0.34 -4.93,-4 -11.64,-4 -1.5,0 -2.8,0.19 -3.94,0.52l2.42,2.42c0.5,-0.06 1.01,-0.09 1.52,-0.09 4.88,0 8.35,2.37 8.68,2.61L12,18.06l-2.06,-2.57 1.45,1.45L12,18.06l8.83,-10.87C20.45,6.86 16.32,3.75 12,3.75c-1.25,0 -2.36,0.22 -3.36,0.58L3.27,1.44 2,2.72l2.05,2.06C1.91,5.77 0.55,6.77 0.36,6.99l11.63,14.49 0.01,0.01 0.01,-0.01 4.54,-5.66 4.73,4.74 1.27,-1.27 -18.91,-18.9z"/>
+</vector>

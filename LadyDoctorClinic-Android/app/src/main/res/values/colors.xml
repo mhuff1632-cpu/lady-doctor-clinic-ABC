@@ -1,0 +1,21 @@
+<resources>
+    <!-- Lady Doctor Clinic Brand Palette (Updated to User Brand Color #FF2E00) -->
+    <color name="clinic_rose_primary">#FF2E00</color>
+    <color name="clinic_rose_dark">#D62400</color>
+    <color name="clinic_rose_light">#FFF1EE</color>
+    <color name="clinic_rose_accent">#FF4D24</color>
+    
+    <color name="clinic_teal">#0F766E</color>
+    <color name="clinic_teal_light">#F0FDFA</color>
+    
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="background_light">#F8FAFC</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="border_light">#E2E8F0</color>
+    
+    <!-- System & Status Bar -->
+    <color name="status_bar_color">#FF2E00</color>
+    <color name="progress_bar_color">#FF2E00</color>
+</resources>

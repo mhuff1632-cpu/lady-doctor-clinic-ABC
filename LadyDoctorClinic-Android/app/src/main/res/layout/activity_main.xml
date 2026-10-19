@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <!-- Top Loading Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="@color/clinic_rose_light"
+        android:progressTint="@color/progress_bar_color"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="60"
+        tools:visibility="visible" />
+
+    <!-- Pull to Refresh Container -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomControlBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar">
+
+        <!-- Core WebView -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Offline / Network Error Overlay -->
+    <LinearLayout
+        android:id="@+id/errorView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottomControlBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        tools:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivErrorIcon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/offline_title"
+            android:src="@drawable/ic_offline" />
+
+        <TextView
+            android:id="@+id/tvErrorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/offline_title"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/offline_message"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_rounded"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.02"
+            android:text="@string/retry_button"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <!-- Bottom Quick Switch Bar (Website vs Admin Website) -->
+    <LinearLayout
+        android:id="@+id/bottomControlBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Website Button -->
+        <LinearLayout
+            android:id="@+id/btnNavWebsite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingVertical="6dp">
+
+            <ImageView
+                android:id="@+id/ivNavWebsite"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/nav_website"
+                android:src="@drawable/ic_nav_website"
+                app:tint="@color/clinic_rose_primary" />
+
+            <TextView
+                android:id="@+id/tvNavWebsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/nav_website"
+                android:textColor="@color/clinic_rose_primary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Admin Website Button -->
+        <LinearLayout
+            android:id="@+id/btnNavAdmin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingVertical="6dp">
+
+            <ImageView
+                android:id="@+id/ivNavAdmin"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/nav_admin"
+                android:src="@drawable/ic_nav_admin"
+                app:tint="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvNavAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/nav_admin"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Refresh / Sync Button -->
+        <LinearLayout
+            android:id="@+id/btnNavRefresh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingVertical="6dp">
+
+            <ImageView
+                android:id="@+id/ivNavRefresh"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/nav_refresh"
+                android:src="@drawable/ic_nav_refresh"
+                app:tint="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvNavRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/nav_refresh"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

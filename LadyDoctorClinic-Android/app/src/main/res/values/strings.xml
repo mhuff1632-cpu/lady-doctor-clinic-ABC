@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lady Doctor Clinic</string>
+    <string name="target_website_url">https://lady-doctor-clinic-123.vercel.app/</string>
+    <string name="trusted_domain">lady-doctor-clinic-123.vercel.app</string>
+    
+    <!-- Offline & Error States -->
+    <string name="offline_title">No Internet Connection</string>
+    <string name="offline_message">Please check your mobile data or Wi-Fi network and tap Retry to access Lady Doctor Clinic.</string>
+    <string name="retry_button">Retry Connection</string>
+    
+    <!-- Navigation & Bottom Bar -->
+    <string name="nav_website">Clinic Website</string>
+    <string name="nav_admin">Admin Website</string>
+    <string name="nav_refresh">Sync / Refresh</string>
+    
+    <!-- Accessibility and Messages -->
+    <string name="loading_progress">Loading clinic website…</string>
+    <string name="app_not_found">No application available to open this link.</string>
+</resources>
